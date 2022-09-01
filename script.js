@@ -109,17 +109,18 @@ function getNextDate(date)
     var year=date.year;
     var daysIsMonth=[31,28,31,30,31,30,31,31,30,31,30,31]; 
      // 0 1 2 3 4 5 6 7 8 9 10 11 12  month-1
-     if(day>29){
-        day=1;month++;
-    }
+
     if(month===2){//check for feburary leap year
        if(isLeapYear(year)) // check for leap year  
-       {   if(day>29){
+       {   
+          if(day>29)
+            {
             day=1;month++;
-           }
-           else{
+            }
+           else
+            {
             if(day>28){day=1;month++;}
-           }
+            }
        }
 
     }
@@ -137,8 +138,11 @@ function getNextDate(date)
     }
     return {day:day,
     month:month,
-    year:year,};
+    year:year};
 }
+
+
+
 
 function getNextPalindroneDate(date){
     var ctr=0;
@@ -158,12 +162,11 @@ function getNextPalindroneDate(date){
     return [ctr,nextDate];
 }
 
+
 // console.log(isLeapYear(2020));  //leap year
 // console.log(isLeapYear(2023));  // not a leap year
 
-// console.log(getNextDate(date));
-//doubt-1 not working for leap year 2020 28 feb get this checked
+console.log(getNextDate(date));
+// working for leap year
 
-// doubt 2 get next palindrone date function
-
-// console.log(getNextPalindroneDate(date));
+console.log(getNextPalindroneDate(date));
