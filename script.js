@@ -205,7 +205,7 @@ function clickHandler(e)
         {
             var [days,nextpal]=getNextPalindroneDate(date);
             outputKey.innerText=`Next Palindrone date is
-            ${nextpal.day},${nextpal.month} ,${nextpal.year} , 
+            ${nextpal.day}, ${nextpal.month} , ${nextpal.year} , 
             You missed it by ${days} days 😔😔 
             Better luck next Life 😜😜😜`;
         }
