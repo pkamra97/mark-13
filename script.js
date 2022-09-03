@@ -52,14 +52,14 @@ function convertDateToString(date)
 
     return dateStr;
 }
-var  date= { 
-    day:28,
-    month:2,
-    year:2020,
-}
+
+// var  date= { 
+//     day:8,
+//     month:8,
+//     year:2021,
+// }
 
 // console.log(convertDateToString(date));
-
 function getAllFormats(date)
 {
     var dateStr=convertDateToString(date);
@@ -141,10 +141,8 @@ function getNextDate(date)
     year:year};
 }
 
-
-
-
-function getNextPalindroneDate(date){
+function getNextPalindroneDate(date)
+{
     var ctr=0;
     var nextDate=getNextDate(date); 
 
@@ -166,7 +164,51 @@ function getNextPalindroneDate(date){
 // console.log(isLeapYear(2020));  //leap year
 // console.log(isLeapYear(2023));  // not a leap year
 
-console.log(getNextDate(date));
+// 15-08-2021  , 28-02-2020 , 31-12-2021
+// console.log(getNextDate(date));
 // working for leap year
 
-console.log(getNextPalindroneDate(date));
+// getting next palindrone date here
+// console.log(getNextPalindroneDate(date));
+// o/p--->  1202 2021   for 31-12-2020
+// o/p--->  12 11 2021  for 08-08-2021
+
+
+// final wiring 
+
+const inputKey=document.querySelector("#input");
+const outputKey=document.querySelector("#output");
+const btnKey=document.querySelector("#btn");
+
+
+function clickHandler(e)
+{
+    console.log(inputKey.value);
+    
+    var dateStr=inputKey.value;
+
+    if(dateStr!==0)
+    {
+        var listOfDates=dateStr.split('-');
+        console.log(listOfDates);
+        var date={day:Number(listOfDates[2]),month:Number(listOfDates[1]),year:Number(listOfDates[0])};
+       
+        console.log(date);
+
+        var ispal=checkPalindronesForAlldateFormats(date);
+        console.log(ispal);
+
+        if(ispal)
+        {
+            outputKey.innerText="Yay!!! you have a Palindrome BirthDay 🎉🎊🎉🎊";
+        }
+        else
+        {
+            var [days,nextpal]=getNextPalindroneDate(date);
+            outputKey.innerText=`Next Palindrone date is ${nextpal.day}, 
+            ${nextpal.month} ,${nextpal.year} , You missed it by ${days}😔😔 `
+        }
+    }
+}
+
+btnKey.addEventListener('click',clickHandler);
