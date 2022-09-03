@@ -186,7 +186,7 @@ function clickHandler(e)
     console.log(inputKey.value);
     
     var dateStr=inputKey.value;
-    if(dateStr!==0)
+    if(dateStr!=="")
     {
         var listOfDates=dateStr.split('-');
         console.log(listOfDates);
@@ -204,10 +204,14 @@ function clickHandler(e)
         else
         {
             var [days,nextpal]=getNextPalindroneDate(date);
-            outputKey.innerText=`Next Palindrone date is ${nextpal.day}, 
-            ${nextpal.month} ,${nextpal.year} , You missed it by ${days} days 😔😔 
+            outputKey.innerText=`Next Palindrone date is
+            ${nextpal.day},${nextpal.month} ,${nextpal.year} , 
+            You missed it by ${days} days 😔😔 
             Better luck next Life 😜😜😜`;
         }
+    }
+    else{
+        outputKey.innerText="Please enter Your birthday😒😒😒";
     }
 }
 
