@@ -2,8 +2,24 @@
 body{
     /* background-color:aqua ; */
     font-family: 'Shadows Into Light', cursive;
+    background-color: #383CC1;
 }
 h1{
-    text-align: center
+    text-align: center;
+    color:antiquewhite;
 }
-
+button{
+    /* position: relative;*/
+    display: block;
+    margin: auto;
+    margin-top: 2rem;
+}
+input{
+display: block;
+margin: auto;
+}
+div{
+    text-align: center;
+    color:white ;
+    font-size: xx-large;
+}

@@ -186,7 +186,6 @@ function clickHandler(e)
     console.log(inputKey.value);
     
     var dateStr=inputKey.value;
-
     if(dateStr!==0)
     {
         var listOfDates=dateStr.split('-');
@@ -206,7 +205,7 @@ function clickHandler(e)
         {
             var [days,nextpal]=getNextPalindroneDate(date);
             outputKey.innerText=`Next Palindrone date is ${nextpal.day}, 
-            ${nextpal.month} ,${nextpal.year} , You missed it by ${days}😔😔 `
+            ${nextpal.month} ,${nextpal.year} , You missed it by ${days} days 😔😔 `
         }
     }
 }
