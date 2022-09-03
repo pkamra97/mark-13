@@ -77,7 +77,7 @@ function getAllFormats(date)
 
 // console.log(getAllFormats(date));
 
-function checkPalindronesForAlldateFormats()
+function checkPalindronesForAlldateFormats(date)
 {
     var listOfPlaindrones=getAllFormats(date);
     var flag=false;
